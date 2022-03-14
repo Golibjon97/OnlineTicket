@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xalqlar Do'stligi</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+</head>
+<body>
+    <div align="center">
+        <h1>Akkount yaratish</h1>
+            <form action="#" th:action="@{/user/create}" th:object="${user}" method="POST">
+                <input type="text" th:field="*{userName}"
+                       placeholder="Ism" class="form-control mb-4 col-4">
+                <input type="password" th:field="*{password}"
+                       placeholder="parol" class="form-control mb-4 col-4">
+                <input type="email" th:field="*{email}"
+                       placeholder="pochta" class="form-control mb-4 col-4">
+                <button type="submit" class="btn btn-info col-2"> Yuklash</button>
+            </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xalqlar Do'stligi</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+</head>
+<body>
+    <div align="center" class="container my-2">
+        <!--<a th:href = "@{/concert/showNewConcertForm}" class="btn btn-primary btn-sm mb-3"> Add Concert </a>-->
+        <h1>Mavjud Konsertlar</h1>
+        <table border="1" class="table table-striped table-responsive-md">
+            <thead>
+            <tr>
+                <th> Konsert nomi</th>
+                <th> Artist</th>
+                <th> Til</th>
+                <th> Joylashuvi</th>
+                <th> Data</th>
+                <th> Vaqt</th>
+                <th> Booking</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr th:each="concert : ${listConcert}">
+                    <td th:text="${concert.concertName}"></td>
+                    <td th:text="${concert.artist}"></td>
+                    <td th:text="${concert.language}"></td>
+                    <td th:text="${concert.location}"></td>
+                    <td th:text="${concert.date}"></td>
+                    <td th:text="${concert.time}"></td>
+                    <td><a th:href = "@{/seat/allSeat}" class="btn btn-primary"> book </a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div align="right">
+        <a th:href = "@{/user/createAccount}" class="btn btn-primary btn-sm mb-3"> Akkount yaratish </a>
+    </div>
+    <div align="right">
+        <a th:href = "@{/logout}" class="btn btn-primary btn-sm mb-3"> Logout </a>
+    </div>
+</body>
+</html>
